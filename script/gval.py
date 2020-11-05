@@ -19,7 +19,7 @@ class gVal() :
 	DEF_TIMEZONE = 9										# 9=日本時間 最終更新日補正用
 	DEF_MOJI_ENCODE = 'utf-8'								#文字エンコード
 
-	DEF_STEAM_PATH   = 'C:/Program Files/Steam (x86)/'		#Steamインストールフォルダ
+	DEF_STEAM_PATH   = 'C:/steam/'							#Steamインストールフォルダ
 	###  C:\\Program Files\\Steam (x86)\\SteamApps\\Common
 
 #############################
