@@ -1,11 +1,11 @@
 # ARK バックアップ　～取扱説明書 兼 設計仕様書～
-::ProjectName= ARK Backup (dev)
+::ProjectName= ARK Backup (main)
 ::github= https://github.com/lucida3rd/ark_backup
 ::Admin= Lucida（lucida3hai@twitter.com）
 ::TwitterURL= https://twitter.com/lucida3hai
 
 ::Update= 2020/11/6
-::Version= 1.0.1.0.dev
+::Version= 1.0.1.0
 
 
 <a id="iSystemSummary"></a>
