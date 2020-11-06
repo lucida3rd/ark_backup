@@ -7,7 +7,7 @@
 # ::TwitterURL : https://twitter.com/lucida3hai
 # ::Class       : ファイル制御
 # 
-# ::Update= 2020/11/5
+# ::Update= 2020/11/6
 #####################################################
 # Private Function:
 #   (none)
@@ -176,7 +176,8 @@ class CLS_File() :
 # ファイル一覧取得
 #####################################################
 	@classmethod
-	def sFs( cls, inPath ):
+###	def sFs( cls, inPath ):
+	def sFs( cls, inPath, inCard="*" ):
 		#############################
 		# 存在チェック
 		if cls().sExist( inPath )!=True :
@@ -185,7 +186,8 @@ class CLS_File() :
 		#############################
 		# ファイルリストの取得
 		try:
-			wARR_Filelist = glob.glob( inPath + "*" )
+###			wARR_Filelist = glob.glob( inPath + "*" )
+			wARR_Filelist = glob.glob( inPath + inCard )
 		except ValueError as err :
 			return []
 		

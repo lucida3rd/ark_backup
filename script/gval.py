@@ -7,7 +7,7 @@
 # ::TwitterURL  : https://twitter.com/lucida3hai
 # ::Class       : グローバル値
 # 
-# ::Update= 2020/11/5
+# ::Update= 2020/11/6
 #####################################################
 
 #####################################################
@@ -62,7 +62,7 @@ class gVal() :
 		"Readme"				: "readme.md",
 		
 		"ARKsave_path"			: DEF_STEAM_PATH + "SteamApps/Common/ARK/ShooterGame/",
-		"ARKcheck_file"			: DEF_STEAM_PATH + "SteamApps/Common/ARK/ShooterGame/Saved/LocalProfiles/PlayerLocalData.arkprofile",
+		"ARKcheck_file"			: DEF_STEAM_PATH + "SteamApps/Common/ARK/ShooterGame/Saved/Config/WindowsNoEditor/Input.ini",
 		"ARKsave_folder"		: "Saved/",
 		
 		"BackupMan_file"		: DEF_USERDATA_PATH + "Saved.zip",
@@ -75,8 +75,7 @@ class gVal() :
 
 	DEF_STR_DISPFILE = {
 		"MainConsole"			: DEF_DISPPATH + "main_console.disp",
-		"SearchConsole"			: DEF_DISPPATH + "search_console.disp",
-		"KeyuserConsole"		: DEF_DISPPATH + "keyuser_console.disp",
+		"CircleConsole"			: DEF_DISPPATH + "circle_console.disp",
 		
 		"(dummy)"				: 0
 	}

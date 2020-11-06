@@ -7,7 +7,7 @@
 # ::TwitterURL  : https://twitter.com/lucida3hai
 # ::Class       : ディスプレイ表示
 # 
-# ::Update= 2020/11/5
+# ::Update= 2020/11/6
 #####################################################
 # Private Function:
 #   __write( self, inLogFile, inDate, inMsg ):
@@ -44,6 +44,10 @@ class CLS_MyDisp():
 		if inDisp=="MainConsole" :
 			cls.__dispInp_Main( inLine, wRes )
 		
+		###定期バックアップ画面
+		elif inDisp=="CircleConsole" :
+			cls.__dispInp_Circle( inLine, wRes )
+		
 		return wRes
 
 	#####################################################
@@ -69,6 +73,41 @@ class CLS_MyDisp():
 				wSet = str(gVal.CHR_Manual_LastDate)
 			else :
 				wSet = "(未バックアップ)"
+			
+			pRes['Responce'] = "                        最終更新日 : " + wSet
+		
+		###インプリ：定期バックアップ最終日時
+		elif "[@CIRCLE-BACKUP-LAST@]"==inLine :
+			if gVal.FLG_Circle_Setted==True :
+				wSet = str(gVal.CHR_Circle_LastDate)
+			else :
+				wSet = "(未バックアップ)"
+			
+			pRes['Responce'] = "                        最終更新日 : " + wSet
+		
+		###インプリ：定期バックアップ時間
+		elif "[@CIRCLE-BACKUP-TIME@]"==inLine :
+			pRes['Responce'] = "                        周期間隔   : " + str(gVal.DEF_STR_TLNUM['circleBackupTime']) + "(分)"
+		
+		#############################
+		# 正常
+		pRes['Result'] = True
+		return
+
+	#####################################################
+	# 定期バックアップ画面
+	@classmethod
+	def __dispInp_Circle( cls, inLine, outRes ):
+		pRes = outRes
+		#############################
+		# インプリメント処理
+		
+		###インプリ：ARKデータ日時最終日時
+		if "[@ARK-LAST@]"==inLine :
+			if gVal.FLG_ARK_Setted==True :
+				wSet = str(gVal.CHR_ARK_LastDate)
+			else :
+				wSet = "(不明)"
 			
 			pRes['Responce'] = "                        最終更新日 : " + wSet
 		

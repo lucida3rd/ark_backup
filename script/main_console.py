@@ -7,7 +7,7 @@
 # ::TwitterURL  : https://twitter.com/lucida3hai
 # ::Class       : メイン処理(コンソール)
 # 
-# ::Update= 2020/11/5
+# ::Update= 2020/11/6
 #####################################################
 # Private Function:
 #   (none)
@@ -135,10 +135,12 @@ class CLS_Main_Console() :
 			cls.OBJ_BackupMain.ManualBackup()
 			wFlg = True
 		
-
-
-
-
+		#############################
+		# 定期バックアップ
+		if inCommand=="\\cb" :
+			cls.OBJ_BackupMain.CircleBackup()
+			wFlg = True
+		
 		#############################
 		# システム情報の表示
 		if inCommand=="\\v" :
