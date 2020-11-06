@@ -54,8 +54,26 @@ class CLS_MyDisp():
 		#############################
 		# インプリメント処理
 		
-		###インプリ：ユーザアカウント
-		if "[@CIRCLE-BACKUP-LAST@]"==inLine :
+		###インプリ：ARKデータ日時最終日時
+		if "[@ARK-LAST@]"==inLine :
+			if gVal.FLG_ARK_Setted==True :
+				wSet = str(gVal.CHR_ARK_LastDate)
+			else :
+				wSet = "(不明)"
+			
+			pRes['Responce'] = "                        最終更新日 : " + wSet
+		
+		###インプリ：手動バックアップ最終日時
+		elif "[@MANUAL-BACKUP-LAST@]"==inLine :
+			if gVal.FLG_Manual_Setted==True :
+				wSet = str(gVal.CHR_Manual_LastDate)
+			else :
+				wSet = "(未バックアップ)"
+			
+			pRes['Responce'] = "                        最終更新日 : " + wSet
+		
+		###インプリ：定期バックアップ最終日時
+		elif "[@CIRCLE-BACKUP-LAST@]"==inLine :
 			if gVal.FLG_Circle_Setted==True :
 				wSet = str(gVal.CHR_Circle_LastDate)
 			else :
@@ -63,7 +81,7 @@ class CLS_MyDisp():
 			
 			pRes['Responce'] = "                        最終更新日 : " + wSet
 		
-		###インプリ：ユーザアカウント
+		###インプリ：定期バックアップ時間
 		elif "[@CIRCLE-BACKUP-TIME@]"==inLine :
 			pRes['Responce'] = "                        周期間隔   : " + str(gVal.DEF_STR_TLNUM['circleBackupTime']) + "(分)"
 		

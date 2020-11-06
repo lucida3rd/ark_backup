@@ -93,6 +93,10 @@ class gVal() :
 	FLG_Console_Mode = False								#画面出力の有無
 	FLG_Test_Mode    = False								#テストモード有無
 
+	CHR_ARK_LastDate    = "1901-01-01 00:00:00"				#ARK 最新日時
+	FLG_ARK_Setted      = False								#最新日時 設定済み
+	CHR_Manual_LastDate = "1901-01-01 00:00:00"				#手動バックアップ 最新日時
+	FLG_Manual_Setted   = False								#最新日時 設定済み
 	CHR_Circle_LastDate = "1901-01-01 00:00:00"				#定期バックアップ 最新日時
 	FLG_Circle_Setted   = False								#最新日時 設定済み
 

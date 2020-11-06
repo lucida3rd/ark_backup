@@ -2,7 +2,11 @@
  ARK Backup CONSOLE
 --------------------
 
+    [\g]              ARKデータ日時取得
+[@ARK-LAST@]
+
     [\mb]             手動バックアップ
+[@MANUAL-BACKUP-LAST@]
 
     [\cb]             定期バックアップ
 [@CIRCLE-BACKUP-LAST@]

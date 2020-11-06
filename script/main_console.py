@@ -124,6 +124,12 @@ class CLS_Main_Console() :
 		
 	#####################################################
 		#############################
+		# ARKデータ更新
+		if inCommand=="\\g" :
+			cls.OBJ_BackupMain.GetARKdate()
+			wFlg = True
+		
+		#############################
 		# 手動バックアップ
 		if inCommand=="\\mb" :
 			cls.OBJ_BackupMain.ManualBackup()

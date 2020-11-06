@@ -34,7 +34,7 @@ from gval import gVal
 class CLS_BackupMain():
 #####################################################
 
-	CHR_ARK_LastDate = "1901-01-01 00:00:00"		#ARK側 更新日時
+###	CHR_ARK_LastDate = "1901-01-01 00:00:00"		#ARK側 更新日時
 
 	ARR_CircleFileList = {}							#定期バックアップファイル一覧
 ###	CHR_Circle_LastDate = "1901-01-01 00:00:00"		#定期バックアップ 最新日時
@@ -64,9 +64,14 @@ class CLS_BackupMain():
 		
 		#############################
 		# ARK最終更新日 取得
-		if self.GetARKdate()!=True :
-			wRes['Reason'] = "GetARKdate is failed"
-			return wRes
+###		if self.GetARKdate()!=True :
+###			wRes['Reason'] = "GetARKdate is failed"
+###			return wRes
+		self.GetARKdate()
+		
+		#############################
+		# 手動バックアップ 最終更新日 取得
+		self.UpdateManualDate()
 		
 		self.ARR_CircleFileList = {}
 		#############################
@@ -106,9 +111,27 @@ class CLS_BackupMain():
 	def GetARKdate(self):
 		wDate = CLS_File.sGetTimedate( gVal.DEF_STR_FILE['ARKcheck_file'] )
 		if wDate=="" :
+			gVal.FLG_ARK_Setted = False
 			return False
 		
-		self.CHR_ARK_LastDate = wDate
+###		self.CHR_ARK_LastDate = wDate
+		gVal.CHR_ARK_LastDate = wDate
+		gVal.FLG_ARK_Setted = True
+		return True
+
+
+
+#####################################################
+# 手動バックアップ 最新日時更新
+#####################################################
+	def UpdateManualDate(self):
+		wDate = CLS_File.sGetTimedate( gVal.DEF_STR_FILE['BackupMan_file'] )
+		if wDate=="" :
+			gVal.FLG_Manual_Setted = False
+			return False
+		
+		gVal.CHR_Manual_LastDate = wDate
+		gVal.FLG_Manual_Setted = True
 		return True
 
 
@@ -230,6 +253,12 @@ class CLS_BackupMain():
 				wRes['Reason'] = "退避ファイルの削除に失敗しました: path=" + gVal.DEF_STR_FILE['BackupMan_befour_file']
 				CLS_OSIF.sErr( wRes )
 				return wRes
+		
+		#############################
+		# ARK最終更新日 取得
+		# 手動バックアップ 最終更新日 取得
+		self.GetARKdate()
+		self.UpdateManualDate()
 		
 		#############################
 		# 完了
