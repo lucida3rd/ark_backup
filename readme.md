@@ -4,8 +4,8 @@
 ::Admin= Lucida（lucida3hai@twitter.com）
 ::TwitterURL= https://twitter.com/lucida3hai
 
-::Update= 2020/11/6
-::Version= 1.0.1.0.dev
+::Update= 2021/3/10
+::Version= 1.1.0.0
 
 
 <a id="iSystemSummary"></a>
@@ -14,7 +14,7 @@ Windows環境化でARK:Survival Evolvedのローカルプレイにおけるセ�
 なおPythonで動作します。インストール方法はこのreadmeに記載しています。
 　　[ARK:Survival Evolved(steam)](https://store.steampowered.com/app/346110/ARK_Survival_Evolved/)
 
-※マルチプレイ（サーバ）には対応してません。
+実験してないので確証ないですが、Pythonで動作するのでPythonがインストールされているサーバでも動作する可能性はあります。
 
 
 
@@ -113,11 +113,11 @@ Python 3.8.5
 
 <a id="iUpdate"></a>
 ## アップデート手順
-るしぼっとリポジトリのmasterから最新版をpullする方法です。  
+当方リポジトリのmasterから最新版をpullする方法です。  
 
 1.githubデスクトップを起動します。
 
-2.自分のLucibotリポジトリを選択し、Current branchをクリックします。
+2.自分のark_backupリポジトリを選択し、Current branchをクリックします。
 
 3.New branchをクリックし、バックアップ用のブランチを作成します。
   名前はわかりやすいように。
