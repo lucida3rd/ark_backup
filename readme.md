@@ -5,7 +5,7 @@
 ::TwitterURL= https://twitter.com/lucida3hai
 
 ::Update= 2021/3/10
-::Version= 1.2.0.0
+::Version= 1.2.0.1
 
 
 <a id="iSystemSummary"></a>
@@ -97,7 +97,7 @@ Python 3.8.5
 　　[githubデスクトップ](https://desktop.github.com)
 
 2-2.githubの自分のアカウントに本家リポジトリをFork（コピー）する。
-　　[Lucibotリポジトリ](https://github.com/lucida3rd/ark_backup)
+　　[ark_backupリポジトリ](https://github.com/lucida3rd/ark_backup)
   の右上あたりの[Fork]ボタンを押してください。
   すると、自分のアカウントに[自垢名 / lucibot_win]というリポジトリができます。
 
